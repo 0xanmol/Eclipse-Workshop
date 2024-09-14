@@ -170,3 +170,7 @@ Success
 >Program failed to complete: exceeded maximum number of instructions allowed (200000) at instruction #334
 >  Program G5bbS1ipWzqQhekkiCLn6u7Y1jJdnGK85ceSYLx2kKbA failed: Program failed to complete
 >  ```
+
+### For queries
+Reachout to Anmol on [Telegram](https://t.me/anmolaroraeth) or on the Eclipse Discord
+
