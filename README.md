@@ -31,7 +31,7 @@ Note that npm is bundled with the Node.js installation, so you don't have to ins
 iii. Now let's install the Solana CLI. This allows you to interact with Solana clusters (Eclipse Testnet in this case).
 
 ```
-~ sh -c "$(curl -sSfL https://release.anza.xyz/v1.18.22/install)"
+~ sudo sh -c "$(curl -sSfL https://release.anza.xyz/v1.18.22/install)"
 ```
 
 iv. Instead of setting your Solana CLI to a local cluster, set it to Eclipse Testnet with the following command:
@@ -75,10 +75,13 @@ Obtain and set up the deposit.js script: https://github.com/Eclipse-Laboratories
 
 You'll need to install the dependencies with ```npm```.
 
+
 Finally, execute the script:
 
 1. ```cd eclipse-deposit```
-2. Run the CLI tool with the necessary options:
+2. ```npm install```
+3. Change name of ``"example-private-key.txt"`` to ``"private-key.txt"`` and paste your Metamask wallet's private key in the file.
+4. Run the CLI tool with the necessary options:
     ```bash
     node bin/cli.js -k <path_to_private_key> -d <solana_destination_address> -a <amount_in_ether> --mainnet|--sepolia 
     ```
@@ -87,7 +90,7 @@ Finally, execute the script:
 
    **Sepolia Testnet Deposit:**
     ```bash
-    node bin/cli.js -k private-key.txt -d 6g8wB6cJbodeYaEb5aD9QYqhdxiS8igfcHpz36oHY7p8 -a 0.002 --sepolia
+    node bin/cli.js -k private-key.txt -d 6g8wB6cJbodeYaEb5aD9QYqhdxiS8igfcHpz36oHY7p8 -a 0.004 --sepolia
     ```
 
    - The `-k, --key-file` option specifies the path to the Ethereum private key file.
@@ -99,7 +102,7 @@ Finally, execute the script:
 A successful command example:
 
 ```Output
-Transaction successful: 0xb05a37f4e4b420f651fdffb0b169ba96cb8c8e201b32f3d8d0c94705d7dc6d5f
+Transaction hash: 0x15041e2f67e821f8a76671aa282f3b7994d81b2c0b3434d67880ef88c9884186
 ```
 You can check the transaction hash on [Sepolia testnet](https://sepolia.etherscan.io/).
 You can verify your testnet account balance using the [Eclipse Explorer](https://explorer.dev.eclipsenetwork.xyz/?cluster=testnet).
@@ -124,6 +127,10 @@ git clone https://github.com/solana-labs/example-helloworld
 cd example-helloworld
 npm install
 ```
+Next, 
+1. install "Even Better TOML" extension
+2. Locate and open the 'Cargo.toml' file at ```src/program-rust/Cargo.toml```
+3. Copy the toml config from the ```'example-Cargo.toml'``` file from the root of this repository and paste it in ```src/program-rust/Cargo.toml```
 
 We build the smart contract:
 
@@ -136,6 +143,18 @@ Finally, we can deploy the smart contract to Eclipse Testnet:
 ```Copy
 solana program deploy dist/program/helloworld.so
 ```
+
+Expected output
+```
+Program Id: Butt9GJQQPXX6ih65e1Z11R4QyQ8YfAEHit7VmkrLs8v
+```
+>[IMPORTANT]
+> It might prompt with
+>```
+>Error: Account 9BEnr8WzpJ9kaEJQyG65iE6357hcXG8EpDEGgbLi2AZ1 has insufficient funds for spend (0.00331058 SOL) + fee (0.0000026 SOL)
+>```
+>
+>Nothing to worry about, just ask Anmol to send you some Eclipse testnet funds or do it yourself (hint: the command is somewhere up there :eyes: )!
 
 We can run the JavaScript client and confirm whether the smart contract was deployed successfully:
 
