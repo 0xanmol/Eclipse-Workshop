@@ -5,7 +5,7 @@ This guide walks you through deploying a simple smart contract to Eclipse Testne
 You'll have to do a few things before you can deploy your smart contract to Eclipse Testnet.
 
 1. Install [metamask](https://metamask.io/download/)
-2. Add Eclipse [Testnet/Devnet wallet](https://docs.eclipse.xyz/developers/wallet/testnet-and-devnet-wallets) to your browner 
+2. Add Eclipse [Testnet/Devnet wallet](https://docs.eclipse.xyz/developers/wallet/testnet-and-devnet-wallets) to your browser 
 
 ## Install Dependencies
 Install Rust, and its package manager Cargo.
